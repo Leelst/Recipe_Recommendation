@@ -28,3 +28,26 @@
 
         <input type="submit" value="레시피 검색">
     </form>    
+
+
+
+
+
+    <figure>
+    <a href="https://www.10000recipe.com/recipe/6876513"><img src="https://recipe1.ezmember.co.kr/cache/recipe/2017/09/15/870609fd6e486df1f8f3e09f322aedeb1.jpg" width="250" height="250" 
+alt=""></a>
+    <figcaption>연습용 이미지</figcaption>
+    <a href="https://www.10000recipe.com/recipe/6876513" target = "_blank">불낙지볶음</a> <!--target 옵션 (새 창에서 열림)-->
+</figure>
+
+<figure>
+    <a href="https://www.10000recipe.com/recipe/6876510"><img src="https://recipe1.ezmember.co.kr/cache/recipe/2017/09/15/ba4eaf1f56abf602889ce67b96ecfb301.jpg" width="250" height="250" 
+alt=""></a>
+    <br><a href="https://www.10000recipe.com/recipe/6876510" target = "_blank">계란말이</a>
+</figure>
+
+<figure>
+    <a href="https://www.10000recipe.com/recipe/6903507"><img src="https://recipe1.ezmember.co.kr/cache/recipe/2019/01/04/518d5bf35102aa51bf58078f7a25dc751.jpg" width="250" height="250"
+alt=""></a>
+    <br><a href="https://www.10000recipe.com/recipe/6903507" target = "_blank">오징어볶음</a>
+</figure>

@@ -4,8 +4,7 @@ import pymysql
 
 bp = Blueprint('login', __name__, url_prefix='/')
 
-ID = "hello"
-PW = "world"
+
 
 # @bp.route('login', methods = ['GET','POST'])
 # def login():
@@ -18,14 +17,14 @@ PW = "world"
 #     else:
 #         return render_template('home.html')
 
-@bp.route('login', methods=["GET","POST"])
-def login():
-    global ID, PW
-    loginId = request.args.get['loginId']
-    loginPw = request.args.get['loginPw']
+# @bp.route('login', methods=["GET","POST"])
+# def login():
+#     global ID, PW
+#     loginId = request.args.get['loginId']
+#     loginPw = request.args.get['loginPw']
 
-    if ID == loginId and PW == loginPw:
-        session["userID"] = loginId
-        return redirect(url_for("index"))
-    else:
-        return redirect(url_for("index"))
+#     if ID == loginId and PW == loginPw:
+#         session["userID"] = loginId
+#         return redirect(url_for("index"))
+#     else:
+#         return redirect(url_for("index"))

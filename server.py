@@ -45,7 +45,7 @@ def home():
 @app.route('/logout', methods = ['get','post'])
 def logout():
     session.pop("userID")
-    return redirect(url_for('home'))
+    return redirect(url_for('index'))
     
 
 @app.route('/signin')

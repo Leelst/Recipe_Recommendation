@@ -1,5 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for,jsonify, session
 from routes import search_route, login
+import pymysql
+import pandas as pd
+
 
 app = Flask(__name__)
 app.secret_key = "aklsdfjij2@lidfjalk"
@@ -9,6 +12,8 @@ app.register_blueprint(login.bp)
 ID = "hello"
 PW = "world"
 
+conn = pymysql.connect(host='localhost', user='root', password='Lja15410!',db='cp1', charset='utf8')
+cur = conn.cursor()
 
 @app.route('/', methods = ['get','post'])
 def index():
@@ -75,6 +80,20 @@ def aboutus():
 @app.route('/regis_recipe')
 def regis_recipe():
     return render_template("regis_recipe.html", username = session["userID"])
+
+@app.route('/total_search', methods = ['get','post'])
+def total_search():
+    search_word = request.form['search_word']
+    cur.execute(f"""
+    SELECT distinct(menu)
+    FROM ingred_inline
+    WHERE menu LIKE '%{search_word}%'
+    LIMIT 10;
+    """)
+
+    res = cur.fetchall()
+    print(res)
+    return render_template('total_search.html', search_word=search_word, res=res, username = session["userID"])
 
 if __name__ == '__main__':
     app.debug = True

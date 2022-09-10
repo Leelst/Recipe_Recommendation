@@ -50,19 +50,21 @@
               </li>
             </ul>
 
-            <!-- {% if username != "" %}-->
+            <!-- {% if username != "" %} -->
+            
             <form methods="post" id="logout" action="/logout">
               {{ username }} 님 환영합니다!
             <button type="submit" class="logout">로그아웃</button>
             </form>
 
-            <!--{% else %}-->
+            <!-- {% else %} -->
+            
             <form methods="post" id="login" action="/home">
               <input type="text" id="login_id" name="loginId" placeholder="ID">
               <input type="password" id="login_pw" name="loginPw" placeholder="PASSWORD">
               <button type="submit" class="login">로그인</button>
             </form>
-            <!-- {% endif %}-->
+            <!-- {% endif %} -->
             
 
             <!-- 
@@ -73,9 +75,9 @@
             </form>
             -->
 
-            <form class="d-flex" method="post">
+            <form class="d-flex" method="post" action="/total_search">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_word">
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
           </div>

@@ -4,10 +4,64 @@
 안녕하세요. Team 4의 home_screen 입니다.
 <br>
 <form method="post" action= "/search/">
-    <label>ingredients : <input type="text" name="ingredients"></label><br><br>
-    <label>price : <input type="text" name="price"></label><br><br>
-    <label>category : <input type="text" name="category"></label><br><br>
-    <label>dislike : <input type="text" name="dislike"></label><br><br>
+    <label>재료 <input type="text" name="ingredients"></label><br><br>
+    <label>가격 <input type="text" name="price"></label><br><br>
+    <label>조리방법 <select name="how" ></label>
+        <option value="none">=== 선택 ===</option>
+        <option value="fry">튀김</option>
+        <option value="boil">끓이기</option>
+        <option value="grill">굽기</option>
+        <option value="stir_fryh">볶음</option>
+        <option value="boiled_down">조림</option>
+        <option value="bc">부침</option>
+        <option value="mc">무침</option>
+        <option value="C">찜</option>
+        <option value="bb">비빔</option>
+        <option value="parboil">데치기</option>
+        <option value="simmer">삶기</option>
+        <option value="raw">회</option>
+        <option value="julim">절임</option>
+        <option value="etc">기타</option>
+      </select><br><br>
+      <label>카테고리 <select name="category" ></label>
+        <option value="none">=== 선택 ===</option>
+        <option value="pf">가공식품류</option>
+        <option value="rice">쌀</option>
+        <option value="df">건어물류</option>
+        <option value="mr">버섯류</option>
+        <option value="chicken">닭고기</option>
+        <option value="vege">채소류</option>
+        <option value="sf">해물류</option>
+        <option value="flour">밀가루</option>
+        <option value="bean">콩/견과류</option>
+        <option value="fruit">과일류</option>
+        <option value="meat">육류</option>
+        <option value="dairy">달걀/유제품</option>
+        <option value="beef">소고기</option>
+        <option value="fork">돼지고기</option>
+        <option value="grain">곡류</option>
+        <option value="etc">기타</option>
+      </select><br><br>
+      <label>난이도 <select name="difficulty" ></label>
+        <option value="none">=== 선택 ===</option>
+        <option value="anyone">아무나</option>
+        <option value="nv">초급</option>
+        <option value="im">중급</option>
+        <option value="ad">고급</option>
+        <option value="super">신의경지</option>
+      </select><br><br>
+      <label>소요시간 <select name="time" ></label>
+        <option value="none">=== 선택 ===</option>
+        <option value="in5">5분이내</option>
+        <option value="in10">10분이내</option>
+        <option value="in15">15분이내</option>
+        <option value="in30">30분이내</option>
+        <option value="in60">60분이내</option>
+        <option value="in90">90분이내</option>
+        <option value="in120">2시간이내</option>
+        <option value="out120">2시간이상</option>
+      </select><br><br>
+    <label>싫어요 : <input type="text" name="dislike"></label><br><br>
 
     <input type="submit" value="레시피 검색">
 </form>    

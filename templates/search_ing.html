@@ -2,22 +2,37 @@
 
 {% block contents %}
 
-{% if ingredients != "" %}        
+{% if ingredients != " " %}        
     {{ingredients}} (을)를 검색했어요.<br>
 {% else %}
 {% endif %}
 
-{% if price != "" %}
+{% if price != " " %}
     {{price}} 원 이내로 만들 수 있는 레시피에요.<br>
 {% else %}
 {% endif %}
 
-{% if category != "" %}
+{% if how != " " %}
+    {{how}} 방법으로 요리를 원해요.<br>
+{% else %}
+{% endif %}
+
+{% if category != " " %}
     {{category}} 카테고리에 있는 레시피에요.<br>
 {% else %}
 {% endif %}
 
-{% if dislike %}
+{% if difficulty != " " %}
+    {{difficulty}} 의 난이도를 원해요.<br>
+{% else %}
+{% endif %}
+
+{% if time != " " %}
+    {{time}} 시간동안 만들 수 있는 레시피에요.<br>
+{% else %}
+{% endif %}
+
+{% if dislike != " " %}
     {{dislike}} (이)가 포함되지 않은 레시피를 준비했어요.<br>
 {% else %}
 {% endif %}

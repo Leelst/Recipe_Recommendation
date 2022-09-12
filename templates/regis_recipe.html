@@ -1,18 +1,301 @@
-{% extends "base_login.html" %}
-
-{% block contents %}
-
-    <h1>레시피등록</h1>
-    <form>
-        <label>레시피 이름 <input type="text"></label>
-        <br>
-        <label for="unit">재료 <input type="text" name="size" id="unit"></label>
-        <select id="unit">
-            <option value="#">마리</option>
-            <option value="#">개</option>
-        </select>
-        <br><br>
-        <input type="submit" value="등록">
-    </form>
+{% extends "base_login.html" %} {% block contents %}
+<div class="form_wrap">
+  <h1>레시피등록</h1>
+  <form action="/regist_recipe/commit" method="post">
+    <label>레시피 이름 <input type="text" name="menu_name" /></label>
+    <br />
+    <div id="ingred_wrap">
+      <fieldset>
+        <legend>재료입력</legend>
+          <div class="ingred1">
+            <input type="text" name="ingred1" placeholder="재료명을 입력해주세요"/>
+            <input type="text" name="ingred1_unit" placeholder="재료의 양을 입력해주세요">
+            <select name="ingred1_unittype">
+              <option value="g">g</option>
+              <option value="ml">ml</option>
+              <option value="개">개</option>
+              <option value="단">단</option>
+              <option value="마리">마리</option>
+              <option value="모">모</option>
+              <option value="봉지">봉지</option>
+              <option value="송이">송이</option>
+              <option value="장">장</option>
+              <option value="컵">컵</option>
+              <option value="포기">포기</option>
+            </select>
+          </div>
+          <div class="ingred2">
+            <input type="text" name="ingred2" placeholder=" ex) 달걀"/>
+            <input type="text" name="ingred2_unit" placeholder=" 1     (단위선택) --->">
+            <select name="ingred2_unittype">
+              <option value="g">g</option>
+              <option value="ml">ml</option>
+              <option value="개">개</option>
+              <option value="단">단</option>
+              <option value="마리">마리</option>
+              <option value="모">모</option>
+              <option value="봉지">봉지</option>
+              <option value="송이">송이</option>
+              <option value="장">장</option>
+              <option value="컵">컵</option>
+              <option value="포기">포기</option>
+            </select>
+          </div>
+          <div class="ingred3">
+            <input type="text" name="ingred3"/>
+            <input type="text" name="ingred3_unit">
+            <select name="ingred3_unittype">
+              <option value="g">g</option>
+              <option value="ml">ml</option>
+              <option value="개">개</option>
+              <option value="단">단</option>
+              <option value="마리">마리</option>
+              <option value="모">모</option>
+              <option value="봉지">봉지</option>
+              <option value="송이">송이</option>
+              <option value="장">장</option>
+              <option value="컵">컵</option>
+              <option value="포기">포기</option>
+            </select>
+          </div>
+          <div class="ingred4">
+            <input type="text" name="ingred4"/>
+            <input type="text" name="ingred4_unit">
+            <select name="ingred4_unittype">
+              <option value="g">g</option>
+              <option value="ml">ml</option>
+              <option value="개">개</option>
+              <option value="단">단</option>
+              <option value="마리">마리</option>
+              <option value="모">모</option>
+              <option value="봉지">봉지</option>
+              <option value="송이">송이</option>
+              <option value="장">장</option>
+              <option value="컵">컵</option>
+              <option value="포기">포기</option>
+            </select>
+          </div>
+          <div class="ingred5">
+            <input type="text" name="ingred5"/>
+            <input type="text" name="ingred5_unit">
+            <select name="ingred5_unittype">
+              <option value="g">g</option>
+              <option value="ml">ml</option>
+              <option value="개">개</option>
+              <option value="단">단</option>
+              <option value="마리">마리</option>
+              <option value="모">모</option>
+              <option value="봉지">봉지</option>
+              <option value="송이">송이</option>
+              <option value="장">장</option>
+              <option value="컵">컵</option>
+              <option value="포기">포기</option>
+            </select>
+          </div>
+          <div class="ingred6">
+            <input type="text" name="ingred6"/>
+            <input type="text" name="ingred6_unit">
+            <select name="ingred6_unittype">
+              <option value="g">g</option>
+              <option value="ml">ml</option>
+              <option value="개">개</option>
+              <option value="단">단</option>
+              <option value="마리">마리</option>
+              <option value="모">모</option>
+              <option value="봉지">봉지</option>
+              <option value="송이">송이</option>
+              <option value="장">장</option>
+              <option value="컵">컵</option>
+              <option value="포기">포기</option>
+            </select>
+          </div>
+          <div class="ingred7">
+            <input type="text" name="ingred7">
+            <input type="text" name="ingred7_unit">
+            <select name="ingred7_unittype">
+              <option value="g">g</option>
+              <option value="ml">ml</option>
+              <option value="개">개</option>
+              <option value="단">단</option>
+              <option value="마리">마리</option>
+              <option value="모">모</option>
+              <option value="봉지">봉지</option>
+              <option value="송이">송이</option>
+              <option value="장">장</option>
+              <option value="컵">컵</option>
+              <option value="포기">포기</option>
+            </select>
+          </div>
+          <div class="ingred8">
+            <input type="text" name="ingred8"/>
+            <input type="text" name="ingred8_unit">
+            <select name="ingred8_unittype">
+              <option value="g">g</option>
+              <option value="ml">ml</option>
+              <option value="개">개</option>
+              <option value="단">단</option>
+              <option value="마리">마리</option>
+              <option value="모">모</option>
+              <option value="봉지">봉지</option>
+              <option value="송이">송이</option>
+              <option value="장">장</option>
+              <option value="컵">컵</option>
+              <option value="포기">포기</option>
+            </select>
+          </div>
+          <div class="ingred9">
+            <input type="text" name="ingred9"/>
+            <input type="text" name="ingred9_unit">
+            <select name="ingred9_unittype">
+              <option value="g">g</option>
+              <option value="ml">ml</option>
+              <option value="개">개</option>
+              <option value="단">단</option>
+              <option value="마리">마리</option>
+              <option value="모">모</option>
+              <option value="봉지">봉지</option>
+              <option value="송이">송이</option>
+              <option value="장">장</option>
+              <option value="컵">컵</option>
+              <option value="포기">포기</option>
+            </select>
+          </div>
+          <div class="ingred10">
+            <input type="text" name="ingred10"/>
+            <input type="text" name="ingred10_unit">
+            <select name="ingred10_unittype">
+              <option value="g">g</option>
+              <option value="ml">ml</option>
+              <option value="개">개</option>
+              <option value="단">단</option>
+              <option value="마리">마리</option>
+              <option value="모">모</option>
+              <option value="봉지">봉지</option>
+              <option value="송이">송이</option>
+              <option value="장">장</option>
+              <option value="컵">컵</option>
+              <option value="포기">포기</option>
+            </select>
+          </div>
+      </fieldset>
+      <fieldset>
+        <legend>기타 조리 정보 입력</legend>
+        <div class="class">
+          <label for="class">종류
+            <select name="class" id="class">
+              <option value="과자">과자</option>
+              <option value="국/탕">국/탕</option>
+              <option value="김치/젓갈/장류">김치/젓갈/장류</option>
+              <option value="디저트">디저트</option>
+              <option value="메인반찬">메인반찬</option>
+              <option value="밑반찬">밑반찬</option>
+              <option value="면/만두">면/만두</option>
+              <option value="밥/죽/떡">밥/죽/떡</option>
+              <option value="빵">빵</option>
+              <option value="샐러드">샐러드</option>
+              <option value="스프">스프</option>
+              <option value="양념/소스/잼">양념/소스/잼</option>
+              <option value="양식">양식</option>
+              <option value="찌개">찌개</option>
+              <option value="차/음료/술">차/음료/술</option>
+              <option value="퓨전">퓨전</option>
+              <option value="기타">기타</option>
+            </select>
+          </label>
+        </div>
+        <div class="class1">
+          <label for="class1">식품군
+            <select name="class1" id="class1">
+              <option value="가공식품류">가공식품류</option>
+              <option value="건어물류">건어물류</option>
+              <option value="곡류">곡류</option>
+              <option value="과일류">과일류</option>
+              <option value="달걀/유제품">달걀/유제품</option>
+              <option value="닭고기">닭고기</option>
+              <option value="돼지고기">돼지고기</option>
+              <option value="밀가루">밀가루</option>
+              <option value="버섯류">버섯류</option>
+              <option value="소고기">소고기</option>
+              <option value="쌀">쌀</option>
+              <option value="육류">육류</option>
+              <option value="채소류">채소류</option>
+              <option value="콩/견과류">콩/견과류</option>
+              <option value="해물류">해물류</option>
+              <option value="기타">기타</option>
+            </select>
+          </label>    
+        </div>
+        <div class="method">
+          <label for="method">조리방법선택
+            <select name="method" id="method">
+              <option value="굽기">굽기</option>
+              <option value="끓이기">끓이기</option>
+              <option value="데치기">데치기</option>
+              <option value="무침">무침</option>
+              <option value="볶음">볶음</option>
+              <option value="부침">부침</option>
+              <option value="비빔">비빔</option>
+              <option value="쌂기">쌂기</option>
+              <option value="절임">절임</option>
+              <option value="조림">조림</option>
+              <option value="찜">찜</option>
+              <option value="튀김">튀김</option>
+              <option value="회">회</option>
+              <option value="기타">기타</option>
+            </select>
+          </label>
+        </div>
+        <div class="concept">
+          <label for="concept">상황
+            <select name="concept" id="concept">
+              <option value="간식">간식</option>
+              <option value="다이어트">다이어트</option>
+              <option value="도시락">도시락</option>
+              <option value="명절">명절</option>
+              <option value="손님접대">손님접대</option>
+              <option value="술안주">술안주</option>
+              <option value="야식">야식</option>
+              <option value="영양식">영양식</option>
+              <option value="이유식">이유식</option>
+              <option value="일상">일상</option>
+              <option value="초스피드">초스피드</option>
+              <option value="해장">해장</option>
+              <option value="기타">기타</option>
+            </select>
+          </label>
+        </div>
+        <div class="count">
+          <label for="count">조리양
+            <select name="count" id="count">
+              <option value="1인분">1인분</option>
+              <option value="2인분">2인분</option>
+              <option value="3인분">3인분</option>
+              <option value="4인분">4인분</option>
+              <option value="5인분">5인분</option>
+              <option value="6인분이상">6인분이상</option>
+            </select>
+          </label>
+        </div>
+        <div class="time">
+          <label for="time">조리시간
+            <select name="time" id="time">
+              <option value="5분이내">5분이내</option>
+              <option value="10분이내">10분이내</option>
+              <option value="15분이내">15분이내</option>
+              <option value="30분이내">30분이내</option>
+              <option value="60분이내">60분이내</option>
+              <option value="90분이내">90분이내</option>
+              <option value="2시간이내">2시간이내</option>
+              <option value="2시간이상">2시간이상</option>
+            </select>
+          </label>
+        </div>
+      </fieldset>
+    <br /><br />
+    <input type="submit" value="등록" />
+    <input type="reset" value="재설정" />
+  </form>
+</div>
+<link rel="stylesheet" href="../static/regi_recipe.css" />
 
 {% endblock contents %}

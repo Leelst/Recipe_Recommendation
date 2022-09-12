@@ -1,0 +1,14 @@
+{% extends "base_login.html" %} {% block contents %}
+    <h1>{{name}}</h1>
+    조리 난이도 : {{level}}<br>
+    <fieldset>
+        <legend>재료목록</legend>
+        {% for i in ingred_list.keys()%}
+        {{i}}
+        {{ingred_list[i][0]}}{{ingred_list[i][1]}}<br>
+        {% endfor %}
+    </fieldset>
+
+    등록되었습니다.
+    <button><a href='/' style="text-decoration: none;">돌아가기</a></button>
+{% endblock contents %}

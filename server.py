@@ -1,13 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for,jsonify, session
-from routes import search_route, login
+from routes import search_route, login, regist_recipe
 import pymysql
 import pandas as pd
-
+# conda install -c conda-forge lightgbm
 
 app = Flask(__name__)
 app.secret_key = "aklsdfjij2@lidfjalk"
 app.register_blueprint(search_route.bp)
 app.register_blueprint(login.bp)
+app.register_blueprint(regist_recipe.bp)
+
 
 ID = "hello"
 PW = "world"

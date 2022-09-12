@@ -86,11 +86,14 @@ def search():
     if len(query) == 0:
         res = "검색 결과가 없습니다."   
     ##################################################################################################
-
+    
+    
+    for_cos_id = []
     image_urls = []
    
     for i in query:
         id_ = i[1]
+        for_cos_id.append(id_)
 
         cur.execute(f"""
         SELECT cosine.1, cosine.2, cosine.3, cosine.4, cosine.5
@@ -108,12 +111,28 @@ def search():
         image_urls.append((image_url, id_, i[0], cosine))
 
 
+    rc_name = []
+    for i in for_cos_id: #홈에서 검색결과로 들어온 id 10개
+
+        cur.execute(f"""
+        SELECT menu.name, menu.id
+        FROM menu
+        WHERE menu.id = (
+            SELECT cosine.1
+            FROM cosine
+            INNER JOIN menu
+            ON menu.id = cosine.id
+            WHERE cosine.id = {i});
+        """)
+
+        name_ = cur.fetchall()
+        rc_name.append(name_[0])
 
         
         
 
     print(image_urls[1])
-
+    print(rc_name)
 
     ### 추천시스템 쿼리문 작성 ###
     
@@ -133,6 +152,7 @@ def search():
         result = query,
         res = res,
         image_urls = image_urls,
-        enumerate=enumerate)
+        rc_name = rc_name,
+        enumerate = enumerate)
 
 

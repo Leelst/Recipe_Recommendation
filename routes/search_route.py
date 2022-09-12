@@ -1,6 +1,8 @@
 # search_route.py
 from flask import Flask, render_template, request, redirect, url_for,jsonify
 from flask import Blueprint
+import requests
+from bs4 import BeautifulSoup
 import pymysql
 
 conn = pymysql.connect(host='localhost', user='root', password='Lja15410!',db='cp1', charset='utf8')
@@ -20,14 +22,10 @@ def search():
     dislike = str(request.form['dislike'])
 
     print(f"'{ingredients}', {price}, '{how}', '{category}', '{difficulty}', '{time}', '{dislike}'")
-    if ingredients != " ":
-        ingredients = ingredients.strip()
+    ingredients = ingredients.strip()
     
     if dislike != " ":
         dislike = dislike.strip()
-
-    if price == " ":
-        price = 99999999
 
     cur.execute(f"INSERT INTO user_search VALUES ('{ingredients}', {price}, '{how}', '{category}', '{difficulty}', '{time}', '{dislike}');")
     
@@ -41,6 +39,89 @@ def search():
     # INSERT INTO search_data VALUES ()
     # """)
 
+    ##################################################################################################
+    if dislike != " ":
+        cur.execute(f"""
+        SELECT menu.name, menu.id
+        FROM menu
+        INNER JOIN (
+        SELECT *
+        FROM menu
+        WHERE menu.id IN ( 
+            SELECT ingred_inline.id
+            FROM ingred_inline 
+            WHERE ingred_inline.ingred LIKE '{ingredients}') AND
+            menu.id NOT IN ( 
+            SELECT ingred_inline.id
+            FROM ingred_inline 
+            WHERE ingred_inline.ingred LIKE '{dislike}'))AS CC
+        ON menu.id = CC.id 
+        WHERE menu.how = '{how}' AND menu.category = '{category}' AND menu.difficulty = '{difficulty}' AND menu.time = '{time}' AND menu.price <= '{price}'
+        ORDER BY menu.view DESC
+        LIMIT 10;
+        """)
+
+        
+
+    else:
+        cur.execute(f"""
+        SELECT menu.name, menu.id
+        FROM menu 
+        INNER JOIN (
+        SELECT *
+        FROM menu
+        WHERE menu.id IN ( 
+            SELECT ingred_inline.id
+            FROM ingred_inline 
+            WHERE ingred_inline.ingred LIKE '{ingredients}'))AS CC
+        ON menu.id = CC.id 
+        WHERE menu.how = '{how}' AND menu.category = '{category}' AND menu.difficulty = '{difficulty}' AND menu.time = '{time}' AND menu.price <= '{price}'
+        ORDER BY menu.view DESC
+        LIMIT 10;
+        """)
+
+    
+    query = cur.fetchall()
+    res = ""
+    if len(query) == 0:
+        res = "검색 결과가 없습니다."   
+    ##################################################################################################
+
+    image_urls = []
+   
+    for i in query:
+        id_ = i[1]
+
+        cur.execute(f"""
+        SELECT cosine.1, cosine.2, cosine.3, cosine.4, cosine.5
+        FROM cosine
+        WHERE id = {id_};
+        """)
+
+        cosine = cur.fetchall()
+
+        url = f'https://www.10000recipe.com/recipe/{id_}'
+        resp = requests.get(url)
+        soup = BeautifulSoup(resp.content, 'html.parser')
+        name = soup.find(id = "main_thumbs")
+        image_url = str(name).split("src=")[1].split("/>")[0].strip('"')
+        image_urls.append((image_url, id_, i[0], cosine))
+
+
+
+        
+        
+
+    print(image_urls[1])
+
+
+    ### 추천시스템 쿼리문 작성 ###
+    
+
+
+
+
+
     return render_template('search_ing.html', 
         ingredients=ingredients,
         price=price,
@@ -49,6 +130,9 @@ def search():
         difficulty=difficulty,
         time=time,
         dislike= dislike,
+        result = query,
+        res = res,
+        image_urls = image_urls,
         enumerate=enumerate)
 
 

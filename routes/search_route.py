@@ -131,8 +131,6 @@ def search():
         
         
 
-    print(image_urls[1])
-    print(rc_name)
 
     ### 추천시스템 쿼리문 작성 ###
     

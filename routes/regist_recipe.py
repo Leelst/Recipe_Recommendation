@@ -21,7 +21,7 @@ def commit_recipe():
     for i in range(1,11):
         #재료입력란이 공백인지 확인 후 {'달걀' : ('1','개')} 형태로 저장
         if request.form[f'ingred{i}']:
-            ingred_list[request.form[f'ingred{i}']] = (request.form[f'ingred{i}_unit'], request.form[f'ingred{i}_unittype'])
+            ingred_list[request.form[f'ingred{i}']] = (request.form[f'ingred{i}_unit'], request.form[f'ingred{i}_unittype']) #('계란', '개')
         else:
             pass
         # 방법,상황,식품군,종류,인분,조리시간,해당 월
@@ -43,8 +43,9 @@ def commit_recipe():
 
     global number
     number += 1
-    print("여기까지 나오나")
-    print(ingred_list.values())
+
+    
+
 
     ###
     conn = pymysql.connect(host='localhost', user='root', password='Lja15410!',db='cp1', charset='utf8')
@@ -55,10 +56,14 @@ def commit_recipe():
     ''')
 
    
+    print(ingred_list.values())  # dict_values([('계란', '개')])
+    print(ingred_list[request.form['ingred1']]) # ('계란', '개')
+    print((request.form['ingred1_unit'], request.form['ingred1_unittype'])) # ('계란', '개')
+    print(list(ingred_list.keys())[0], ingred_list[list(ingred_list.keys())[0]][0], ingred_list[list(ingred_list.keys())[0]][1])
 
     for i in range(len(ingred_list)):
         cur.execute(f"""
-        INESERT INTO new_recipe VALUES ('{number}', '{name}', '{ingred_list.keys()[i]}', '{ingred_list[ingred_list.keys()[i][0]]}', '{ingred_list[ingred_list.keys()[i][1]]}');
+        INSERT INTO new_recipe VALUES ('{number}', '{name}', '{list(ingred_list.keys())[i]}', '{ingred_list[list(ingred_list.keys())[i]][0]}', '{ingred_list[list(ingred_list.keys())[i]][1]}');
         """)
 
     conn.commit()

@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, redirect, url_for,jsonify, se
 from routes import search_route, login, regist_recipe
 import pymysql
 import pandas as pd
+import requests
+from bs4 import BeautifulSoup
 # conda install -c conda-forge lightgbm
 
 app = Flask(__name__)
@@ -83,19 +85,40 @@ def aboutus():
 def regis_recipe():
     return render_template("regis_recipe.html", username = session["userID"])
 
+@app.route('/table')
+def sauce_table():
+    return render_template("table.html", username = session["userID"])
+
+
+
 @app.route('/total_search', methods = ['get','post'])
 def total_search():
     search_word = request.form['search_word']
     cur.execute(f"""
-    SELECT distinct(menu)
-    FROM ingred_inline
-    WHERE menu LIKE '%{search_word}%'
+    SELECT name, id
+    FROM menu
+    WHERE menu.id IN (
+        SELECT id 
+        FROM ingred_inline
+        WHERE ingred LIKE "%{search_word}%")
+    ORDER BY view DESC
     LIMIT 10;
     """)
 
     res = cur.fetchall()
-    print(res)
-    return render_template('total_search.html', search_word=search_word, res=res, username = session["userID"])
+
+    image_urls = []
+    for i in res:
+        url = f'https://www.10000recipe.com/recipe/{i[1]}'
+        resp = requests.get(url)
+        soup = BeautifulSoup(resp.content, 'html.parser')
+        name = soup.find(id = "main_thumbs")
+        image_url = str(name).split("src=")[1].split("/>")[0].strip('"')
+        image_urls.append(image_url)
+
+
+    return render_template('total_search.html', search_word=search_word, res=res, image_urls = image_urls,
+    enumerate = enumerate, username = session["userID"])
 
 if __name__ == '__main__':
     app.debug = True

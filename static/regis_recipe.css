@@ -1,0 +1,85 @@
+html {
+    background-color: #faf8eb;
+}
+main {
+    background-color: #faf8eb;
+}
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 5rem;
+    font-weight: bold;
+    padding-bottom: 3rem;
+}
+.form_wrap {
+    color : whitesmoke;
+    background-color: #699784;
+    border : solid whitesmoke 2px;
+    width: 50rem;
+    height: 35rem;
+    margin: 0 auto;
+}
+.reci_name {
+    padding-top: 1rem;
+    height: 2.4rem;
+    text-align: left;
+    padding-left: 2.8rem;
+}
+#recipe_name{
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 1.5rem;
+}
+#name_input {
+    height:1.6rem;
+    font-size: 1.3rem;
+}
+#ingred_wrap {
+    display:flex;
+    justify-content: space-around;
+}
+.left_wrap {
+    border: solid white 2px;
+    margin-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+}
+.left_wrap p {
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.right_wrap {
+    border : solid white 2px;
+    flex-basis: 15rem;
+    margin-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.right_wrap p {
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-align: center;
+}
+.right_wrap div {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 0.3rem;
+}
+.right_wrap label {
+    font-weight: bold;
+}
+
+.buttons {
+    text-align: right;
+    padding-right: 3rem;
+    padding-top: 1rem;
+}
+.buttons input {
+    width: 3.5rem;
+    height: 2rem;
+}
+
+

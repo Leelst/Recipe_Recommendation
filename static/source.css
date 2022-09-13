@@ -1,0 +1,38 @@
+html {
+    background-color: #faf8eb;
+}
+article {
+    background-color: #faf8eb;
+    color: white;
+}
+h2 {
+    font-size: 1.8rem;
+}
+.page_wrap {
+    display:flex;
+    gap: 3rem;
+    justify-content: center;
+    margin-top: 3rem;
+}
+.left_table {
+    text-align: center;
+    background-color: #699784;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    flex-basis: 18rem;
+    
+}
+.right_table {
+    text-align: center;
+    background-color: #699784;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    flex-basis: 18rem;
+}
+table {
+    border: solid black 1px;
+    margin: auto;
+    color: white;
+    margin-bottom: 1rem;
+    padding: 1rem  1.5rem 1rem 1.5rem;
+}

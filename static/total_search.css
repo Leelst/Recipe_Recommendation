@@ -1,0 +1,18 @@
+html { 
+    background-color: #faf8eb;
+}
+main {
+    background-color: #faf8eb;
+    color: black;
+}
+.info {
+    font-size: 1.3rem;
+}
+#search_word {
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+.list {
+    display: grid;
+    grid-template-columns: 5;
+}

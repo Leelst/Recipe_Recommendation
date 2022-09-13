@@ -3,70 +3,88 @@
 
 
 {% block head %}
-	<style>
-		table,th,td {
-			border: 1px solid black; /* 표의 테두리 - 1px 회색 실선 */
-			border-collapse: collapse;  /* 표 테두리와 셀 테두리 합치기 */
-		}		
-		th,td {
-			padding: 15px; /* 셀 패딩(테두리와 내용 사이의 여백) */
-		}
-	</style>
+<style type="text/css">
+	/*
+	
+	마우스 가져갔을 때에만, 링크 텍스트에 밑줄 넣기
+	
+	no-uline 이라는 클래스를 지정한 링크에만 적용됨
+	
+	*/
+	
+#text1 a:hover { font : normal 12px Gulim; color: black; text-decoration:underline}
+	
+	
+</style>
 {% endblock head %}
 
 
 
 {% block contents %}
-	<h1>Kyunghee Ko</h1>
-	<p>이메일 : funcom@gmail.com</p>
-	<h2>Who I am?</h2>
-	<p>프런트엔드 웹 기술(Front-end Web Tech.)에 관심을 가지고 있습니다.<br> 현재 마이크로소프트 공인 최고기술전문가(Most Valuable Professional)로 활동 중이며,<br> 제주의 한
-		시골 마을에서 코딩 중입니다.</p>
+<center>
+	<br><br><br><br>
+	<h1>About us</h1>
+	<p>사이트 및 개발자 소개</p>
+	<br><br><br>
+	<h1>어떤 사이트인가요?</h2><br>
+	<p>우리는 '가격'에 초점을 맞춘 레시피를 제공합니다. <br>재료 기반 검색은 물론, 다양한 검색 환경을 제공하며 해당 레시피의 '가격'을  알려줍니다. 
+		<br>Home 화면에서 통합검색과 조건별 검색이 가능합니다. <br> 조건별 검색을 진행하게되면 검색 결과에 나온 레시피와 비슷한 재료로 만들 수 있는 '추천 메뉴'를 확인할 수 있습니다.
+		<br><br>사용자가 자신의 레시피를 쉽게 등록할 수 있습니다. <br> 사용자는 자신만의 레시피를 등록하여 공유할 수 있습니다. 
+		<br>레시피 이름과 재료, 개수를 입력하고 제공하는 몇가지 카테고리를 입력게되면<br> 우리의 알고리즘이 여러분의 요리 난이도를 알려주는 서비스를 제공합니다.
+		<br>해당자료를 바탕으로 사용자는 난이도를 기준으로 검색할 수 있게됩니다.</p>
+	<br><br><br><br>	
 	<hr>
-	<h2>Skills</h2>
-	<ul>
-		<li>
-			사용 언어
-			<ul>
-				<li><mark>HTML</mark></li>
-				<li><mark>CSS</mark></li>
-				<li>Javascript</li>
-				<li>AngularJS</li>
-			</ul>
-		</li>
-		<li>
-			사용 툴
-			<ul>
-				<li>Photoshop(12years)</li>
-				<li>Dreamweaver(19years)</li>
-				<li><b>Visual Studio(5years)</b></li>
-			</ul>
-		</li>
-	</ul>
-	<h2>Academic</h2>
-	<table>
-		<caption>학력 사항</caption>
-		<thead>
-			<tr>
-				<th>출신학교</th>
-				<th>전공</th>
-				<th>기간</th>
-				<th>졸업구분</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>ㅇㅇㅇ고등학교</td>
-				<td> (해당사항 없음)</td>
-				<td>2001.3 ~ 2004.2</td>
-				<td>졸업</td>
-			</tr>
-			<tr>
-				<td>ㅁㅁ대학교</td>
-				<td>컴퓨터공학</td>
-				<td>2004.3 ~ 2008.2</td>
-				<td>졸업</td>
-			</tr>
-		</tbody>
-	</table>
+	<br><br><br><br><br>
+	<h2>How do you make it?</h2>
+	<br>
+		<h5><b>사용 언어</b></h5>
+
+		HTML<br>
+		CSS<br>
+		Python
+		<br>
+		<br>
+		<br>
+		<h5><b>추천 시스템</b></h5>
+		Cosine Similarity
+		<br>
+		<br>
+		<br>
+		<h5><b>분류모델</b></h5>
+		RandomForest<br>
+		XGB<br>
+		Catboost<br>
+		LightGBM<br>
+		<br>
+		<br>
+		<br>
+	<h2>Developer</h2>
+		<br>
+
+		<mark><b>황한재</b></mark>(DS)
+		<br>
+		han8018@gmail.com<br>
+		<div id="text1"><a href="https://github.com/HwangHanJae" class="no-uline" target = "_blank" ><label style="color: black">https://github.com/HwangHanJae</label></a></div>
+		<br><br>
+		<mark><b>김혜관</b></mark>(DS)
+		<br>
+		hyegwan.k@gmail.com<br>
+		<div id="text1"><a href="https://github.com/Hyegwan" class="no-uline" target = "_blank" ><label style="color: black">https://github.com/Hyegwan</label></a></div>
+		<br><br>
+		<mark><b>이정안</b></mark>(DE)
+		<br>
+		wjddks727@gmail.com<br>
+		<div id="text1"><a href="https://github.com/Leelst" class="no-uline" target = "_blank" ><label style="color: black">https://github.com/Leelst</label></a></div>
+		<br><br>
+		<mark><b>황성산</b></mark>(DE)
+		<br>
+		rpkrm25@gmail.com<br>
+		<div id="text1"><a href="https://github.com/sssiott" class="no-uline" target = "_blank" ><label style="color: black">https://github.com/sssiott</label></a></div>
+		<br><br>
+		<mark><b>백승학</b></mark>(DA)
+		<br>	
+		tmdgkr94@naver.com<br>
+		<div id="text1"><a href="https://github.com/seunghak421" class="no-uline" target = "_blank" ><label style="color: black">https://github.com/seunghak421</label></a></div>
+		<br><br><br><br><br><br><br>
+</center>
 {% endblock contents %}

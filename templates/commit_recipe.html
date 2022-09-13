@@ -1,14 +1,26 @@
 {% extends "base_login.html" %} {% block contents %}
-    <h1>{{name}}</h1>
-    조리 난이도 : {{level}}<br>
-    <fieldset>
-        <legend>재료목록</legend>
-        {% for i in ingred_list.keys()%}
-        {{i}}
-        {{ingred_list[i][0]}}{{ingred_list[i][1]}}<br>
-        {% endfor %}
-    </fieldset>
+<link rel="stylesheet" href="../static/commit.css">
+<main>
+    <p id="title">레시피가 등록되었습니다.</p>
+    <div class="wrap">
+        <h1>{{name}}</h1>
+        <p>추천 조리 난이도 : <span>{{level}}</span></p>
+        
+        <div class="info">
+            <p>재료목록</p>
+            <div class="ingred_list">
+                {% for i in ingred_list.keys() %}
+                <!-- 재료명 -->
+                <p>{{i}}
+                <!-- 재료 수량과 단위  -->
+                {{ingred_list[i][0]}}{{ingred_list[i][1]}}</p>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="buttons">
+            <button><a href='/' style="text-decoration: none;">돌아가기</a></button>
+        </div>
+    </div>
+</main>    
 
-    등록되었습니다.
-    <button><a href='/' style="text-decoration: none;">돌아가기</a></button>
 {% endblock contents %}

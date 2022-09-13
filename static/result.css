@@ -1,0 +1,47 @@
+html { 
+    background-color: #faf8eb;
+}
+main {
+    background-color: #faf8eb;
+    display: flex;
+    color: white;
+    justify-content: space-around;
+}
+.info {
+    background-color: #699784;
+    flex-basis: 27rem;
+    max-height: 27rem;
+    margin-top: 3rem;
+}
+.reco {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 3rem;
+}
+.item {
+    margin: 1rem;
+    text-align: center;
+}
+p {
+    font-size: 1.3rem;
+}
+.info div {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.search_name {
+    font-size: 1.2rem;
+}
+#name,
+#price,
+#how,
+#category,
+#diff,
+#time,
+#dislike {
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+.search_name {
+    margin-top: 2rem;
+}

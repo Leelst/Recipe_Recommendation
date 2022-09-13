@@ -136,9 +136,6 @@ def search():
     
 
 
-
-
-
     return render_template('search_ing.html', 
         ingredients=ingredients,
         price=price,

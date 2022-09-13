@@ -1,7 +1,18 @@
 {% extends "base_login.html" %}
 
 {% block contents %}
-    <h3>{{search_word}} (으)로 검색한 결과입니다</h3>
-    {{res}}
+<link rel="stylesheet" href="../static/total_search.css">
+<main>
+    <p class="info"><span id="search_word">{{search_word}}</span> (으)로 검색한 결과입니다</p>
+    <div class="list">
+        {% for i, j in enumerate(image_urls) %}
+        <label><a href="https://www.10000recipe.com/recipe/{{res[i][1]}}"></a><img src={{j}} width="250" height="250"></label>
+        <figcaption><a href="https://www.10000recipe.com/recipe/{{res[i][1]}}" target = "_blank">{{res[i][0]}}</a></figcaption>
+        {% endfor %}
+    </div>
+</main>
+    
+    
+
 
 {% endblock contents %}

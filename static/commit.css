@@ -1,0 +1,47 @@
+html {
+    background-color: #faf8eb;
+}
+main {
+    background-color: #faf8eb;
+    margin: 0 auto;
+    font-size: 1.3rem;
+}
+#title {
+    text-align: center;
+    font-size: 3rem;
+    padding: 8rem 1rem 1rem 1rem;
+}
+h1 {
+    margin-top: 1rem;
+}
+span {
+    font-weight: bold;
+    color : #fdf247;
+}
+.wrap {
+    margin: auto;
+    border: solid white 2px;
+    background-color: #699784;
+    color: white;
+    text-align: center;
+    width: 40rem;
+
+}
+.ingred_list {
+    margin: 1rem;
+    border: solid white 2px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.ingred_list p {
+    font-size: 1.4rem;
+}
+.buttons {
+    margin: 1rem;
+}
+a {
+    color: black;
+}
+a:hover {
+    color: green;
+}

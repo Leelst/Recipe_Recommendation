@@ -1,68 +1,73 @@
 {% extends "base_login.html" %}
 
 {% block contents %}
-
-{% if ingredients != " " %}        
-    {{ingredients}} (을)를 검색했어요.<br>
-{% else %}
-{% endif %}
-
-{% if price != " " %}
-    {{price}} 원 이내로 만들 수 있는 레시피에요.<br>
-{% else %}
-{% endif %}
-
-{% if how != " " %}
-    {{how}} 방법으로 요리를 원해요.<br>
-{% else %}
-{% endif %}
-
-{% if category != " " %}
-    {{category}} 카테고리에 있는 레시피에요.<br>
-{% else %}
-{% endif %}
-
-{% if difficulty != " " %}
-    {{difficulty}} 의 난이도를 원해요.<br>
-{% else %}
-{% endif %}
-
-{% if time != " " %}
-    {{time}} 시간동안 만들 수 있는 레시피에요.<br>
-{% else %}
-{% endif %}
-
-{% if dislike != " " %}
-    {{dislike}} (이)가 포함되지 않은 레시피를 준비했어요.<br>
-{% else %}
-{% endif %}
-
-
-{{res}}
-
-<table>
-    <tr>
+<link rel="stylesheet" href="../static/result.css">
+<main>
+    <div class="info">
+        <div class="search_name">
+            <!-- {% if ingredients != " " %}         -->
+                <p><span id="name">{{ingredients}}</span>(을)를 검색했어요.</p>
+            <!-- {% else %}
+            {% endif %} -->
+        </div>
+        <div class="price">
+            <!-- {% if price != " " %} -->
+                <p><span id="price">{{price}}</span>원 이내로 만들 수 있는 레시피에요.</p>
+            <!-- {% else %}
+            {% endif %} -->
+        </div>
+    
+        <div class="how">
+            <!-- {% if how != " " %} -->
+                <p><span id="how">{{how}}</span>방법으로 요리를 원해요.</p>
+            <!-- {% else %}
+            {% endif %} -->
+        </div>
+    
+        <div class="category">
+            <!-- {% if category != " " %} -->
+                <p><span id="category">{{category}}</span> 카테고리에 있는 레시피에요.</p>
+            <!-- {% else %}
+            {% endif %} -->
+        </div>
+    
+        <div class="difficulty">
+            <!-- {% if difficulty != " " %} -->
+                <p><span id="diff">{{difficulty}}</span> 의 난이도를 원해요.</p>
+            <!-- {% else %}
+            {% endif %} -->
+        </div>
+    
+        <div class="time">
+            <!-- {% if time != " " %} -->
+                <p><span id="time">{{time}}</span> 시간동안 만들 수 있는 레시피에요.</p>
+            <!-- {% else %}
+            {% endif %} -->
+        </div>
+    
+        <div class="dislike">
+            <!-- {% if dislike != " " %} -->
+                <p><span id="dislike">{{dislike}}</span> (이)가 포함되지 않은 레시피를 준비했어요.</p>
+            <!-- {% else %}
+            {% endif %} -->
+        </div>
+    
+    </div>
+    <p>{{res}}</p>
+    <div class="reco">
         {% for j, i in enumerate(image_urls) %}
-        <td><a href="https://www.10000recipe.com/recipe/{{i[1]}}"><img src={{i[0]}} width="250" height="250"></a>
-        <figcaption><a href="https://www.10000recipe.com/recipe/{{i[1]}}" target = "_blank">{{i[2]}}</a></figcaption><!--target 옵션 (새 창에서 열림)--></td>
-        
-        <td><a href="https://www.10000recipe.com/recipe/{{rc_name[j][1]}}"></a>
-        <figcaption><a href="https://www.10000recipe.com/recipe/{{rc_name[j][1]}}" target = "_blank">{{rc_name[j][0]}}</a></figcaption></td>
-        <!--<p>{{i[3]}}</p> -->
+        <div class="item">
+            <a href="https://www.10000recipe.com/recipe/{{i[1]}}"><img src={{i[0]}} width="250" height="250"></a>
+            <figcaption><a href="https://www.10000recipe.com/recipe/{{i[1]}}" target = "_blank" style="text-decoration: none; font-size: 1.5rem; color: black;">{{i[2]}}</a></figcaption><!--target 옵션 (새 창에서 열림)-->
+            
+            <a href="https://www.10000recipe.com/recipe/{{rc_name[j][1]}}"></a>
+            <figcaption><a href="https://www.10000recipe.com/recipe/{{rc_name[j][1]}}" target = "_blank" style="text-decoration: none; font-size: 1.5rem; color: black;">{{rc_name[j][0]}}</a></figcaption>
+        </div>
+   
         {% endfor %}
+    </div>
+</main>
 
-
-        <!--
-        <td><a href="https://www.10000recipe.com/recipe/6876510"><img src="https://recipe1.ezmember.co.kr/cache/recipe/2017/09/15/ba4eaf1f56abf602889ce67b96ecfb301.jpg" width="250" height="250" 
-            alt=""></a>
-        <figcaption><a href="https://www.10000recipe.com/recipe/6876510" target = "_blank">계란말이</a></figcaption></td>
-
-        <td><a href="https://www.10000recipe.com/recipe/6903507"><img src="https://recipe1.ezmember.co.kr/cache/recipe/2019/01/04/518d5bf35102aa51bf58078f7a25dc751.jpg" width="250" height="250"
-        alt=""></a>
-        <figcaption><a href="https://www.10000recipe.com/recipe/6903507" target = "_blank">오징어볶음</a></figcaption></td>
-            -->
-    </tr>
-</table>
 
 
 

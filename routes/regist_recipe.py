@@ -55,11 +55,7 @@ def commit_recipe():
     INSERT INTO new_info VALUES ('{number}','{column[0]}','{column[1]}','{column[2]}','{column[3]}','{column[4]}','{column[5]}');
     ''')
 
-   
-    print(ingred_list.values())  # dict_values([('계란', '개')])
-    print(ingred_list[request.form['ingred1']]) # ('계란', '개')
-    print((request.form['ingred1_unit'], request.form['ingred1_unittype'])) # ('계란', '개')
-    print(list(ingred_list.keys())[0], ingred_list[list(ingred_list.keys())[0]][0], ingred_list[list(ingred_list.keys())[0]][1])
+
 
     for i in range(len(ingred_list)):
         cur.execute(f"""

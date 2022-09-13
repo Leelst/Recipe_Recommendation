@@ -89,6 +89,10 @@ def regis_recipe():
 def sauce_table():
     return render_template("table.html", username = session["userID"])
 
+@app.route('/market', methods=['get','post'])
+def market():
+    return render_template("market.html", username = session["userID"])
+
 
 
 @app.route('/total_search', methods = ['get','post'])

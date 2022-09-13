@@ -12,25 +12,24 @@ h2 {
     display:flex;
     gap: 3rem;
     justify-content: center;
-    margin-top: 3rem;
+    padding-top: 12rem;
 }
 .left_table {
+    padding: 2rem 1rem 1rem 1rem;
     text-align: center;
     background-color: #699784;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    flex-basis: 18rem;
+
+    flex-basis: 25rem;
     
 }
 .right_table {
+    padding: 2rem 1rem 1rem 1rem;
     text-align: center;
     background-color: #699784;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    flex-basis: 18rem;
+
+    flex-basis: 25rem;
 }
 table {
-    border: solid black 1px;
     margin: auto;
     color: white;
     margin-bottom: 1rem;

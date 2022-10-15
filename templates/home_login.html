@@ -2,64 +2,158 @@
 
 
 {% block contents %}
-<link rel="stylesheet" href="../static/home.css">
+<!--<link rel="stylesheet" href="../static/home.css">-->
 <main>
-  <div class="form_wrap">
-    <div class="leftform_wrap">
-      <h1>레시피 검색하기</h1>
+
+<!--
+<div class="container my-5">
+      <h1 class="my-3 border-bottom pb-2">레시피 검색하기</h1>
+      
+      <div class="fieldset">
       <form method="post" action= "/search/">
-        <div class="input_wrap">
-          <label class="label">재료 </label>
-        <input class="input" type="text" name="ingredients" value=" " required>
+
+        <label class="label">재료 </label>
+          <input class="input" type="text" name="ingredients" value=" " required><br>
         <label class="label">가격 </label>
-        <input class="input" type="text" name="price" value=" " required>
+          <input class="input" type="text" name="price" value=" " required><br>
         <label class="label">조리방법 </label>
-        <select class="input" name="how" required>
-          <option value="튀김">튀김</option>
-          <option value="끓이기">끓이기</option>
-          <option value="굽기">굽기</option>
-          <option value="볶음">볶음</option>
-          <option value="조림">조림</option>
-          <option value="부침">부침</option>
-          <option value="무침">무침</option>
-          <option value="찜">찜</option>
-          <option value="비빔">비빔</option>
-          <option value="데치기">데치기</option>
-          <option value="삶기">삶기</option>
-          <option value="회">회</option>
-          <option value="절임">절임</option>
-          <option value="기타">기타</option>
-        </select>
+          <select class="input" name="how" required>
+            <option value="튀김">튀김</option>
+            <option value="끓이기">끓이기</option>
+            <option value="굽기">굽기</option>
+            <option value="볶음">볶음</option>
+            <option value="조림">조림</option>
+            <option value="부침">부침</option>
+            <option value="무침">무침</option>
+            <option value="찜">찜</option>
+            <option value="비빔">비빔</option>
+            <option value="데치기">데치기</option>
+            <option value="삶기">삶기</option>
+            <option value="회">회</option>
+            <option value="절임">절임</option>
+            <option value="기타">기타</option>
+          </select><br>
         <label class="label">카테고리 </label>
-        <select class="input" name="category" required>
-          <option value="디저트">디저트</option>
-          <option value="밥/죽/떡">밥/죽/떡</option>
-          <option value="메인반찬">메인반찬</option>
-          <option value="면/만두">면/만두</option>
-          <option value="빵">빵</option>
-          <option value="양념/소스/잼">양념/소스/잼</option>
-          <option value="양식">양식</option>
-          <option value="스프">스프</option>
-          <option value="차/음료/술">차/음료/술</option>
-          <option value="밑반찬">밑반찬</option>
-          <option value="샐러드">샐러드</option>
-          <option value="국/탕">국/탕</option>
-          <option value="찌개">찌개</option>
-          <option value="김치/젓갈/장류">김치/젓갈/장류</option>
-          <option value="과자">과자</option>류</option>
-          <option value="퓨전">퓨전</option>
-          <option value="기타">기타</option>
-        </select>
+          <select class="input" name="category" required>
+            <option value="디저트">디저트</option>
+            <option value="밥/죽/떡">밥/죽/떡</option>
+            <option value="메인반찬">메인반찬</option>
+            <option value="면/만두">면/만두</option>
+            <option value="빵">빵</option>
+            <option value="양념/소스/잼">양념/소스/잼</option>
+            <option value="양식">양식</option>
+            <option value="스프">스프</option>
+            <option value="차/음료/술">차/음료/술</option>
+            <option value="밑반찬">밑반찬</option>
+            <option value="샐러드">샐러드</option>
+            <option value="국/탕">국/탕</option>
+            <option value="찌개">찌개</option>
+            <option value="김치/젓갈/장류">김치/젓갈/장류</option>
+            <option value="과자">과자</option>류</option>
+            <option value="퓨전">퓨전</option>
+            <option value="기타">기타</option>
+          </select><br>
         <label class="label">난이도 </label>
-        <select class="input" name="difficulty" required>
+          <select class="input" name="difficulty" required>
+            <option value="아무나">아무나</option>
+            <option value="초급">초급</option>
+            <option value="중급">중급</option>
+            <option value="고급">고급</option>
+            <option value="신의경지">신의경지</option>
+          </select><br>
+        <label class="label">소요시간 </label>
+          <select class="input" name="time" required>
+            <option value="5분이내">5분이내</option>
+            <option value="10분이내">10분이내</option>
+            <option value="15분이내">15분이내</option>
+            <option value="30분이내">30분이내</option>
+            <option value="60분이내">60분이내</option>
+            <option value="90분이내">90분이내</option>
+            <option value="2시간이내">2시간이내</option>
+            <option value="2시간이상">2시간이상</option>
+          </select><br>
+        <label class="label">싫어요 </label>
+          <input class="input" type="text" name="dislike" value=" "><br>
+
+        <div class="buttons">
+          <button type="submit" value="레시피 검색">검색하기</button>
+          <button type="reset">재설정</button>
+        </div>
+      </form>  
+      </div>
+-->
+
+<img src="https://i.pinimg.com/564x/97/7a/6b/977a6b37e6c52a9b6da0f8c4881276cf.jpg" class="img-fluid" alt="base" style="transform:rotate(270deg);">
+
+<div class="container my-5">
+  <h2 class="my-3 border-bottom pb-2">레시피 검색하기</h2>    
+  <form class="row g-3" method="post" action="/search/">
+    <div class="col-md-4">
+      <label for="ingredients" class="form-label">재료</label>
+      <input type="text" class="form-control" name="ingredients" id="ingredients" required>
+    </div>
+    <div class="col-md-4">
+      <label for="dislike" class="form-label">싫어요</label>
+      <input type="text" class="form-control" name="dislike" id="dislike">
+    </div>
+    <div class="col-md-4">
+      <label for="price" class="form-label">가격</label>
+      <input type="text" class="form-control" name="price" id="price" required>
+    </div>
+    <div class="col-3">
+      <label for="how" class="form-label">조리방법</label>
+      <select class="form-control" name="how" required>
+        <option value="튀김">튀김</option>
+        <option value="끓이기">끓이기</option>
+        <option value="굽기">굽기</option>
+        <option value="볶음">볶음</option>
+        <option value="조림">조림</option>
+        <option value="부침">부침</option>
+        <option value="무침">무침</option>
+        <option value="찜">찜</option>
+        <option value="비빔">비빔</option>
+        <option value="데치기">데치기</option>
+        <option value="삶기">삶기</option>
+        <option value="회">회</option>
+        <option value="절임">절임</option>
+        <option value="기타">기타</option>
+      </select>
+    </div>
+    <div class="col-3">
+      <label for="category" class="form-label">카테고리</label>
+      <select class="form-control" name="category" id="category" required>
+        <option value="디저트">디저트</option>
+        <option value="밥/죽/떡">밥/죽/떡</option>
+        <option value="메인반찬">메인반찬</option>
+        <option value="면/만두">면/만두</option>
+        <option value="빵">빵</option>
+        <option value="양념/소스/잼">양념/소스/잼</option>
+        <option value="양식">양식</option>
+        <option value="스프">스프</option>
+        <option value="차/음료/술">차/음료/술</option>
+        <option value="밑반찬">밑반찬</option>
+        <option value="샐러드">샐러드</option>
+        <option value="국/탕">국/탕</option>
+        <option value="찌개">찌개</option>
+        <option value="김치/젓갈/장류">김치/젓갈/장류</option>
+        <option value="과자">과자</option>류</option>
+        <option value="퓨전">퓨전</option>
+        <option value="기타">기타</option>
+      </select>
+    </div>
+    <div class="col-3">
+      <label for="difficulty" class="form-label">난이도</label>
+        <select class="form-control" name="difficulty" id="difficulty" required>
           <option value="아무나">아무나</option>
           <option value="초급">초급</option>
           <option value="중급">중급</option>
           <option value="고급">고급</option>
           <option value="신의경지">신의경지</option>
         </select>
-        <label class="label">소요시간 </label>
-        <select class="input" name="time" required>
+    </div>
+    <div class="col-3">
+      <label for="time" class="form-label">소요시간</label>
+        <select class="form-control" class="time" name="time" required>
           <option value="5분이내">5분이내</option>
           <option value="10분이내">10분이내</option>
           <option value="15분이내">15분이내</option>
@@ -69,24 +163,52 @@
           <option value="2시간이내">2시간이내</option>
           <option value="2시간이상">2시간이상</option>
         </select>
-        <label class="label">싫어요 : </label>
-        <input class="input" type="text" name="dislike" value=" ">
-        </div>
-        <div class="buttons">
-          <button type="submit" value="레시피 검색">검색하기</button>
-          <button type="reset">재설정</button>
-        </div>
-      </form>  
     </div>
-  <div class="rightform_wrap">
-    <h1>전체메뉴 검색하기</h1>
-    <form class="d-flex" method="post" action="/total_search">
-      <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_word">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+    <div class="col-12">
+      <div class="btn float-right">
+        <button type="reset" class="btn btn-primary">재설정</button>
+        <button type="submit" class="btn btn-primary" value="레시피 검색">검색하기</button>
+      </div>
+      
+    </div>  
+  </form>
+</div>
+
+
+
+
+
+<!-- Image Card -->
+<div class="container text-center my-5">
+  <div class="row">
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <img src="https://images.chosun.com/resizer/wsSVlD2KlkIAXTYSWUZxQSceAUE=/960x504/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/HS2MWHN32OMYMSDYNGYRIZCXNI.jpg" class="card-img-top" alt="pasta" width="150" height="200">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>      
+    </div>
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <img src="https://img.danawa.com/prod_img/500000/653/027/img/8027653_1.jpg?shrink=330:330&_v=20220530173400" class="card-img-top" alt="mara" width="150" height="200">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>      
+    </div>
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <img src="https://www.tokyoweekender.com/wp-content/uploads/2020/09/Natto-Tokyo-Weekender.jpg" class="card-img-top" alt="natto" width="150" height="200">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+
 </main>
 
 {% endblock contents %}

@@ -1,20 +1,20 @@
 html {
-    background-color: #faf8eb;
+    background-color: rgb(255, 255, 255);
 }
 main {
-    background-color: #faf8eb;
+    background-color: #ffffff;
 }
 h1 {
     font-size: 3rem;
     text-align: center;
     padding-top: 5rem;
     font-weight: bold;
-    padding-bottom: 3rem;
+    padding-bottom: 3rem;   
 }
 .form_wrap {
-    color : whitesmoke;
-    background-color: #699784;
-    border : solid whitesmoke 2px;
+    color : black;
+    background-color: white;
+    border : gray 2px;
     width: 50rem;
     height: 35rem;
     margin: 0 auto;

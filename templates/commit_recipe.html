@@ -1,13 +1,16 @@
-{% extends "base_login.html" %} {% block contents %}
+{% extends "base_login.html" %} 
+
+{% block contents %}
+
 <link rel="stylesheet" href="../static/commit.css">
 <main>
     <p id="title">레시피가 등록되었습니다.</p>
     <div class="wrap">
-        <h1>{{name}}</h1>
-        <p>추천 조리 난이도 : <span>{{level}}</span></p>
+        <h2 class="mgt2">{{name}}</h2>
+        <p class="mgt2">추천 조리 난이도 : <span>{{level}}</span></p>
         
         <div class="info">
-            <p>재료목록</p>
+            <h5 class="mgt2">재료목록</h5>
             <div class="ingred_list">
                 {% for i in ingred_list.keys() %}
                 <!-- 재료명 -->
@@ -18,9 +21,10 @@
             </div>
         </div>
         <div class="buttons">
-            <button><a href='/' style="text-decoration: none;">돌아가기</a></button>
+            <button><a href='/home' style="text-decoration: none;">돌아가기</a></button>
         </div>
     </div>
-</main>    
+</main>
+
 
 {% endblock contents %}

@@ -40,7 +40,7 @@ def search():
     # """)
 
     ##################################################################################################
-    if dislike != " ":
+    if dislike != " ": # 싫어요 항목이 없을 경우
         cur.execute(f"""
         SELECT menu.name, menu.id
         FROM menu
@@ -63,7 +63,7 @@ def search():
 
         
 
-    else:
+    else: # 싫어요 항목이 있을 경우
         cur.execute(f"""
         SELECT menu.name, menu.id
         FROM menu 
@@ -90,8 +90,9 @@ def search():
     
     for_cos_id = []
     image_urls = []
+    cosine_urls = []
    
-    for i in query:
+    for i in query: # query : [menu.name, menu.id]
         id_ = i[1]
         for_cos_id.append(id_)
 
@@ -103,12 +104,21 @@ def search():
 
         cosine = cur.fetchall()
 
+        # 검색된 요리 이미지 찾기
         url = f'https://www.10000recipe.com/recipe/{id_}'
         resp = requests.get(url)
         soup = BeautifulSoup(resp.content, 'html.parser')
         name = soup.find(id = "main_thumbs")
         image_url = str(name).split("src=")[1].split("/>")[0].strip('"')
         image_urls.append((image_url, id_, i[0], cosine))
+
+        # 검색된 요리의 추천 레시피 이미지 찾기
+        cos_url = f'https://www.10000recipe.com/recipe/{cosine[0][0]}'
+        resp = requests.get(cos_url)
+        soup = BeautifulSoup(resp.content, 'html.parser')
+        name = soup.find(id = "main_thumbs")
+        cosine_image_url = str(name).split("src=")[1].split("/>")[0].strip('"')
+        cosine_urls.append((cosine_image_url, cos_url))
 
 
     rc_name = []
@@ -147,6 +157,7 @@ def search():
         result = query,
         res = res,
         image_urls = image_urls,
+        cosine_urls = cosine_urls,
         rc_name = rc_name,
         enumerate = enumerate)
 

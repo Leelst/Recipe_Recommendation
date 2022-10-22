@@ -1,14 +1,14 @@
 html { 
-    background-color: #faf8eb;
+    background-color: #ffffff;
 }
 main {
-    background-color: #faf8eb;
+    background-color: #ffffff;
     display: flex;
-    color: white;
+    color: rgb(0, 0, 0);
     justify-content: space-around;
 }
 .info {
-    background-color: #699784;
+    background-color: #ffffff;
     flex-basis: 27rem;
     max-height: 27rem;
     margin-top: 3rem;
@@ -17,6 +17,11 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: 3rem;
+}
+.foursteps {
+    float: left;
+    padding: 10px;
+    width: 25%;
 }
 .item {
     margin: 1rem;
@@ -44,4 +49,7 @@ p {
 }
 .search_name {
     margin-top: 2rem;
+}
+.img_ {
+    border-radius: 5%;
 }

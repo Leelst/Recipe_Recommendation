@@ -3,14 +3,18 @@
 {% block contents %}
 <link rel="stylesheet" href="../static/total_search.css">
 <main>
-    <p class="info"><span id="search_word">{{search_word}}</span> (으)로 검색한 결과입니다</p>    
-    <div class="list">{% for i, j in enumerate(image_urls) %}
-    <div class="item">
-        <a href="https://www.10000recipe.com/recipe/{{res[i][1]}}"></a><img src={{j}} width="250" height="250">
-        <figcaption><a href="https://www.10000recipe.com/recipe/{{res[i][1]}}" target = "_blank" style="text-decoration: none; font-size: 1.5rem; color: black;">{{res[i][0]}}</a></figcaption>
+    <h2 class="info"><span id="search_word">{{search_word}}</span> (으)로 검색한 결과입니다</h2>    
+    <div class="container mt-3">
+        <div class="reco">
+            {% for i, j in enumerate(image_urls) %}
+            <div class="item">
+                <a href="https://www.10000recipe.com/recipe/{{res[i][1]}}"></a>
+                <img class="img_" src={{j}} width="250" height="250">
+                <figcaption><a href="https://www.10000recipe.com/recipe/{{res[i][1]}}" target = "_blank" style="text-decoration: none; font-size: 1.5rem; color: black;">{{res[i][0]}}</a></figcaption>
+            </div>
+            {% endfor %}
+
     </div>
-    {% endfor %}
-    </div>  
 
 </main>
     

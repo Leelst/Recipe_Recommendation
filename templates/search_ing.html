@@ -53,19 +53,35 @@
         </div>
     
     </div>
-    <p>{{res}}</p>
-    <div class="reco">
-        {% for j, i in enumerate(image_urls) %}
-        <div class="item">
-            <a href="https://www.10000recipe.com/recipe/{{i[1]}}"><img src={{i[0]}} width="250" height="250"></a>
-            <figcaption><a href="https://www.10000recipe.com/recipe/{{i[1]}}" target = "_blank" style="text-decoration: none; font-size: 1.5rem; color: black;">{{i[2]}}</a></figcaption><!--target 옵션 (새 창에서 열림)-->
-            
-            <a href="https://www.10000recipe.com/recipe/{{rc_name[j][1]}}"></a>
-            <figcaption><a href="https://www.10000recipe.com/recipe/{{rc_name[j][1]}}" target = "_blank" style="text-decoration: none; font-size: 1.5rem; color: black;">{{rc_name[j][0]}}</a></figcaption>
+    <div class="container my-3">
+    <!--<p>{{res}}</p>-->
+        <h2 class="my-3">> 조건에 맞는 레시피에요</h2>
+        <div class="reco">
+            {% for j, i in enumerate(image_urls) %}
+            <div class="item">
+                <a href="https://www.10000recipe.com/recipe/{{i[1]}}"><img class="img_" src={{i[0]}} width="250" height="250"></a>
+                <figcaption><a href="https://www.10000recipe.com/recipe/{{i[1]}}" target = "_blank" style="text-decoration: none; font-size: 1.5rem; color: black;">{{i[2]}}</a></figcaption><!--target 옵션 (새 창에서 열림)-->
+            </div>
+            {% endfor %}
         </div>
-   
+            <h2 class="mt-5"><추천 레시피></h2><br>
+            <a>검색 레시피와 비슷한 재료를 사용하는 레시피를 추천해드려요<br>'레시피 보러가기'를 누르면 해당 레시피로 이동합니다</a>
+        <div class="reco">
+            {% for j, i in enumerate(image_urls) %}
+            <div class="card m-2" style="width: 16rem;">
+                <img src="{{cosine_urls[j][0]}}" class="card-img-top" alt="..." width="150" height="200">
+                <div class="card-body">
+                    <h5 class="card-title">{{rc_name[j][0]}}</h5>
+                    <p class="card-text"></p>
+                    <a href="{{cosine_urls[j][1]}}" class="btn btn-primary">레시피 보러가기</a>
+                </div>
+            </div>
         {% endfor %}
+        </div>
     </div>
+
+    
+    
 </main>
 
 

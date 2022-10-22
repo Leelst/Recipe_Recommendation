@@ -1,18 +1,21 @@
 html {
-    background-color: #faf8eb;
+    background-color: #ffffff;
 }
 article {
-    background-color: #faf8eb;
+    background-color: #ffffff;
     color: white;
 }
 h2 {
     font-size: 1.8rem;
 }
+.mt8{
+    margin-top: 8rem;
+}
 .page_wrap {
     display:flex;
     gap: 3rem;
     justify-content: center;
-    padding-top: 12rem;
+    padding-top: 3rem;
 }
 .left_table {
     padding: 2rem 1rem 1rem 1rem;

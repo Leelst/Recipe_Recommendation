@@ -1,8 +1,8 @@
 html { 
-    background-color: #faf8eb;
+    background-color: #ffffff;
 }
 main {
-    background-color: #faf8eb;
+    background-color: #ffffff;
     color: black;
 }
 .info {
@@ -18,8 +18,16 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
+.reco {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 3rem;
+}
 .item {
     text-align: center;
     padding-top: 1rem;
     padding-bottom: 2rem;
+}
+.img_ {
+    border-radius: 5%;
 }

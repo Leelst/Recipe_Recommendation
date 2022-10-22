@@ -1,35 +1,42 @@
 html {
-    background-color: #faf8eb;
+    background-color: #ffffff;
 }
 main {
-    background-color: #faf8eb;
+    background-color: #ffffff;
     margin: 0 auto;
     font-size: 1.3rem;
 }
 #title {
+    font: gulim;
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding: 8rem 1rem 1rem 1rem;
 }
 h1 {
     margin-top: 1rem;
 }
+.mgt2 {
+    margin-top: 2rem;
+}
 span {
     font-weight: bold;
-    color : #fdf247;
+    color : #d82424;
 }
 .wrap {
     margin: auto;
-    border: solid white 2px;
-    background-color: #699784;
-    color: white;
+    padding: auto;
+    border: solid rgb(255, 255, 255) 1px;
+    background-color: #cddec8;
+    color: rgb(0, 0, 0);
     text-align: center;
     width: 40rem;
+    border-radius: 15px 15px 15px 15px / 15px 15px 15px 15px;
 
 }
 .ingred_list {
-    margin: 1rem;
-    border: solid white 2px;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    border: solid rgb(0, 0, 0) 1px;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
